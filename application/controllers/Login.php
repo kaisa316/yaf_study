@@ -11,8 +11,10 @@ class LoginController extends Yaf\Controller_Abstract {
 
     public function loginAction() {
         $input = $this->getRequest();
-        $params = $input->getParams();
-        var_dump($params);
+        var_dump($input->getQuery());
+        var_dump($input->getQuery("username"));
+        var_dump($input->getQuery("password"));
+        var_dump($input->getPost("password"));
         echo 'hello world,'.__METHOD__;
         exit;
     }
