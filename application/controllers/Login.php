@@ -10,14 +10,14 @@ class LoginController extends Yaf\Controller_Abstract {
    }
 
     public function loginAction() {
+//        Yaf\Loader::autoload();
         $input = $this->getRequest();
 //        var_dump($input->getQuery());
 //        var_dump($input->getQuery("username"));
 //        var_dump($input->getQuery("password"));
 //        var_dump($input->getPost("password"));
         $loginService = new services\LoginService();
-        $loginService->saveUser();
-
+        $loginService->getAllUser();
         exit;
     }
 
@@ -28,5 +28,9 @@ class LoginController extends Yaf\Controller_Abstract {
 
        print_r($config_arr);
        print_r($host);
+    }
+
+    public function phpinfoAction() {
+       phpinfo();
     }
 }

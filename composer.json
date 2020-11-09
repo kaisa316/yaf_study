@@ -7,8 +7,15 @@
             "email": "490788241@qq.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/database": "^8.13",
+        "doctrine/dbal": "^2.12"
+    },
     "autoload": {
-        "psr-4": { "services\\": "services/"}
+        "psr-4": {
+            "services\\": "services/",
+            "models\\": "models/",
+            "my_model\\": "my_model/"
+        }
     }
 }
