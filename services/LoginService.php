@@ -10,7 +10,11 @@ class LoginService
 {
 
     public function saveUser() {
-        echo "this is service";
+        $user = new UserModel();
+        $user->username = 'zhyy';
+        $user->password = md5('zhyy');
+        $result = $user->save();
+        print_r($result);
     }
 
     public function getAllUser() {
@@ -19,4 +23,5 @@ class LoginService
         echo '<pre>';
         print_r($userInfo->toArray());
     }
+
 }

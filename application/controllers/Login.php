@@ -21,6 +21,25 @@ class LoginController extends Yaf\Controller_Abstract {
         exit;
     }
 
+    public function getUserAction() {
+        //        Yaf\Loader::autoload();
+        $input = $this->getRequest();
+        //        var_dump($input->getQuery());
+        //        var_dump($input->getQuery("username"));
+        //        var_dump($input->getQuery("password"));
+        //        var_dump($input->getPost("password"));
+        $loginService = new services\LoginService();
+        $loginService->getAllUser();
+        exit;
+    }
+
+    public function saveUserAction() {
+        $input = $this->getRequest();
+        $loginService = new services\LoginService();
+        $loginService->saveUser();
+        exit;
+    }
+
     public function configAction() {
        $config = new Yaf\Config\Ini(APPLICATION_PATH . '/conf/redis.ini',ini_get("yaf.environ"));
        $config_arr = $config->toArray();
